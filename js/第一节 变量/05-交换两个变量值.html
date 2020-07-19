@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 1 我们需要一个临时变量
+        // 2 把 apple1 给我们的临时变量 temp
+        // 3 把 apple2 里面的数据给我们 apple1
+        // 4.再把临时变量里面的值 apple2
+
+        var temp; //声明了一个临时变量为空
+        var apple1 = '青苹果';
+        console.log(apple1);
+        var apple2 = '红苹果';
+        console.log(apple2);
+        temp = apple1; //把右边给左边
+        apple1 = apple2;
+        apple2 = temp;
+        console.log(apple1);
+        console.log(apple2);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
