@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 1. 用布尔值参与逻辑运算  true && false == false
+        // 2. 原理：左边表达式值可以确定结果时，就不在继续运算右边表达式的值
+        // 3. 逻辑 与 短路运算   如果表达式1  结果为真 则返回表达式2
+        console.log(123 && 456);  // 456
+        // 4. 如果表达式1为假 则返回表达式1
+        console.log(0 && 456);  // 0
+        console.log(0 && 1 + 2 && 445 * 456); // 0
+        console.log('' && 1 + 2 && 445 * 456); //''
+        //如果有空的或者否定的为假 其余是真的 0  ''  null undefined NaN
+
+
+
+        // 逻辑 或 短路运算  如果表达式1 结果为真 则返回的是表达式1  如果表达式 结果为假 则 返回表达式 2
+        console.log(123 || 456); // 123
+        console.log(123 || 456 || 789); // 123
+        console.log(0 || 456);  // 456
+         //列
+        let num = 0;
+        console.log(123 || num++); // 123   123为真，num++不执行
+        console.log(num); // 0
+    </script>
+</head>
+<body>
+
+</body>
+</html>
