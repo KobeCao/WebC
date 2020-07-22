@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 打印五行五列星星
+        let  str = '';
+        for (let i = 1;i <= 5; i++){  //外层循环负责打印五行
+            for( let j = 1; j <= 5;j++){  //  里层循环负责一行打印五颗星星
+                 str = str + '★';
+            }  //如果一行打印完五颗星星 就要另起一行  加  \n
+            str = str + '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

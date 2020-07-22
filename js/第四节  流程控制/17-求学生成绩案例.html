@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let num = prompt('请输入班级的总人数:');  //  num 班级总人数
+        let sum = 0; //求和的变量
+        let average = 0; //求平均值的变量
+        for (let i = 1;i <= num; i++){
+             let scroe = prompt('请您输入第'+ i + '个学生成绩');
+             sum = sum + parseFloat(scroe);  //求和 prompt里面的值是字符串  需要转换成数字型
+        }
+        average = sum / num; //  求平均成绩
+        alert('班级总的成绩是'+ sum);
+        alert('班级的平均成绩是'+average);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
