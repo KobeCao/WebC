@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 将以下数组中的大于等于 10 的元素找出来。放入新数组
+        let arr = [2,0,6,15,77,52,25,0,7];
+        //  方法一
+        // 1. 先声明一个新的数组用于存放新数据newArr
+        // let newArr = [];
+        // let j = 0;
+        // // 2. 遍历原来的旧数组，找出大于等于10的元素
+        // for(let i = 0; i <arr.length;i++) {
+        //     if(arr[i] >= 10) {
+        //         //新数组索引号应该从 0 开始  依次递增
+        //         newArr[j] = arr[i] ;
+        //         j++;  //每次存依次 j++ 1 次
+        //     }
+        // }
+        // console.log(newArr);
+        // 方法二
+        // 1. 先声明一个新的数组用于存放新数据newArr
+        let newArr = []; //刚开始newArr.length 就是 0
+        // 2. 遍历原来的旧数组，找出大于等于10的元素
+        for(let i = 0; i <arr.length;i++) {
+            if(arr[i] >= 10) {
+                //新数组索引号应该从 0 开始  依次递增
+                newArr[newArr.length] = arr[i] ;  //  数组的长度可以自动检测里面元素的变化
+            }
+        }
+        console.log(newArr);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

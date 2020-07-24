@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let arr = [2,6,1,77,88,25,8];
+        let max = arr[0]; //  先把数组里面的第一个数给max 让接下来的数依次比较
+        for (let i = 1; i < arr.length;i++){
+            if(arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        console.log('该数组里面的最大值是:' + max );
+        //  最小值
+        let min = arr[0];
+        for (let i = 1; i < arr.length; i++){
+            if(arr[i] < min){
+                min = arr[i];
+            }
+        }
+        console.log('该数组里面的最小值是:' + min );
+    </script>
+</head>
+<body>
+
+</body>
+</html>

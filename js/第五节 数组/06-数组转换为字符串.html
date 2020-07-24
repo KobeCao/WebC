@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //  将数组 ['red','green','blue','pink']转换为字符串，并且用 | 或其他符号分开
+        let arr = ['red','green','blue','pink'];
+        // 1. 需要一个新变量用于存放转换完的字符串 str
+        let str = '';
+        let sep = '！';
+        //  2. 遍历原来的数组
+        for (let i =  0; i < arr.length; i++){
+            str += arr[i] + sep; //将数组元素进行相连
+        }
+        console.log(str);// red|green|blue|pink|
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
