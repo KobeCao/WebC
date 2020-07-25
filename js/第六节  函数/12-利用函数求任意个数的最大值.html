@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //  利用函数求任意个数的最大值
+        function getMax() {
+           let max = arguments[0]; // 先使得 arguments 里面的第一个数等于最大值max 然后依次与其它数进行比较
+            for (let i = 1; i < arguments.length;i++){
+                if(arguments[i] > max){
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+
+        console.log(getMax(1,2,5,98,75,42,0,3));  // 98
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 1. return 终止函数
+        // function getSum(sum1,sum2) {
+        //    return num1 + num2; //  return 后面的代码不会被执行
+        //    alert('我是不会被执行的');
+        // }
+        // console.log(getSum(1.5));
+
+        // 2. return 只能返回一个值
+        // function fn(num1,num2) {
+        //     return num1,num2; //返回的结果只有一个值
+        // }
+        //
+        // console.log(fn(1,2)); // 2
+
+        // 3.想要输出多个值  可以利用数组求任意两个数的 加减乘除结果
+        // function getResult(num1,num2) {
+        //     return [num1 + num2, num1 - num2,num1 * num2,num1 / num2];
+        // }
+        // let re = getResult(1,2);  //返回一个数组
+        // console.log(re); // [3, -1, 2, 0.5]
+        // console.log(re.length);
+        // for (let i = 0;i < 4;i++ ){  // 遍历数组
+        //     console.log(re[i]);
+        // }
+
+
+        // 4. 我们的函数如果有 return 则返回的是 return 后面的值，如果函数后面没有 return 则返回 undefined
+        function fun1() {
+            return 666;
+        }
+        console.log(fun1()); // 666
+        function fun2() {
+        }
+        console.log(fun2()) ; // undefined
+    </script>
+</head>
+<body>
+
+</body>
+</html>

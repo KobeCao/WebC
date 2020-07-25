@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //  1. 利用函数返回值 return 求任意两个数的和
+        // function getSum(num1,num2) {
+        //     return num1 + num2;
+        // }
+        // console.log(getSum(1,2)); // 3
+        // 2. 利用函数返回值 return 求任意两个数之间的和
+        function getSum1(start,end) {
+            let num = 0;
+            for (let i = start;i <= end;i++) {
+                num += i;
+            }
+            return num;
+        }
+        console.log(getSum1(1,10));
+        console.log(getSum1(10,100));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 第一种方法
+        // let num1 = prompt('请输入第一个数字:');
+        // let num2 = prompt('请输入第二个数字');
+        // let num3 = prompt('请输入第三个数字');
+        // function getMax(num1,num2,num3) {
+        //     let max = num1 // 先假设 num1 最大
+        //     //先比较num1 和 num2的大小
+        //     if (num1 > num2) {
+        //         max = num1;
+        //     }else{
+        //         max =  num2;
+        //     }
+        //     // 在比较 max 和 num3 的大小
+        //     if (max >num3){
+        //         return max;
+        //     }else{
+        //         return num3;
+        //     }
+        // }
+        // alert(getMax(num1,num2,num3));
+        // 第二种方法  三元运算符
+        let num1 = prompt('请输入第一个数字:');
+        let num2 = prompt('请输入第二个数字');
+        let num3 = prompt('请输入第三个数字');
+        function getMax(num1,num2,num3) {
+            // 如果条件表达式的结果为真  则返回 num1 的值  如果条件表达式结果为假  则返回num2的值 它们的值先给 max 让 max 与num3 比较
+            max = num1>num2 ? num1 : num2;
+            return max>num3 ? max : num3;
+        }
+        alert(getMax(num1,num2,num3));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
