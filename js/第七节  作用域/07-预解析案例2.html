@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 案例2
+        var  num = 20;
+        function fn() {
+            console.log(num); //undefined
+            var num = 20;
+            console.log(num); //20
+        }
+        fn();
+
+        //预解析过程
+        // 1 全局作用域提升
+        // var num;
+        //
+        // function fn() {
+        //     console.log(num); //undefined
+        //     var num = 20;
+        //     console.log(num); //20
+        // }
+        // num = 20;
+        // fn();
+        // // 2
+        // var num;
+        //
+        // function fn() {
+        //     var num;
+        //     console.log(num); //undefined
+        //      num = 20;
+        //     console.log(num); //20
+        // }
+        // num = 20;
+        // fn();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

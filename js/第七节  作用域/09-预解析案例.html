@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        f1();
+        console.log(c);// 9
+        console.log(b);// 9
+        console.log(a);// 报错
+        function f1() {
+           var  a = b = c = 9;
+            console.log(c); // 9
+            console.log(b); // 9
+            console.log(a); // 9
+        }
+
+        // 预解析过程
+        // 1
+        // function f1() {
+        //     var  a = b = c = 9; //  相当于a = 9;b = 9;c = 9;b 和 c 直接赋值 没有var声明  当做全局变量
+        //     console.log(c);
+        //     console.log(b);
+        //     console.log(a);
+        // }
+        // f1();
+        // console.log(c);
+        // console.log(b);
+        // console.log(a);
+        //
+       // 2
+        // function f1() {
+        //     var a;
+        //     a = b = c = 9; //  相当于a = 9;b = 9;c = 9;b 和 c 直接赋值 没有var声明  当做全局变量
+        //     console.log(a); //9
+        //     console.log(b); //9
+        //     console.log(c); //9
+        // }
+        // f1();
+        // console.log(c);
+        // console.log(b);
+        // console.log(a);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

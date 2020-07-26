@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var num = 10;
+        fun();
+        function fun() {
+            console.log(num); // undefined
+            var num = 20;
+        }
+
+        // 相当于执行了一下操作
+        // 第一步: 将一下的 变量和函数提升到了当前作用域的最前面
+        // var num;
+        // function fun() {
+        //     console.log(num);
+        //     var  num = 20;
+        // }
+        //第二步：依次执行：
+        // num = 10;
+        // fun();
+        //   function fun() {
+        //     var = num;  将底下numd 的变量提升到前面
+        //   console.log(num);
+        //     num = 20;
+        //  }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

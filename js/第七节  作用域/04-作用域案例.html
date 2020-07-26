@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //  1.案例一:  结果是几
+        function f1() {
+            let num = 123;
+
+            function f2() {
+                 console.log(num); // 123  站在目标查找  一层一层的往外查找
+            }
+            f2();
+        }
+        let num = 456;
+        f1();
+
+        // 2.案例二：
+        let  a = 1;
+        function fn1() {
+            let  a = 2;
+            let  b = '22';
+            fun2();
+        function  fun2() {
+            let a = 3;
+            fun3();
+        function fun3() {
+            let a = 4;
+            console.log(a);  // a的值 = 4
+            console.log(b);  // b的值 = 22
+        }    
+        }
+        }
+        fn1();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
