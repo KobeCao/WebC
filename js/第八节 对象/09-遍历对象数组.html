@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // fon in遍历我们的对象
+
+        // for(变量 in 对象){
+        //
+        // }
+        let obj = {
+            name: '张三',
+            age: 18,
+            sex: '男',
+            fn:function () {  //  也可以遍历方法
+                console.log('方法');
+            }
+        }
+        for (let k in obj){
+            console.log(k); // k 是变量  输出的  得到的是属性名
+            console.log(obj[k]); // obj[k] 得到的是 属性值
+        }
+        // 我们使用 for in 里面的变量  常用 k 或者 key
+    </script>
+</head>
+<body>
+
+</body>
+</html>

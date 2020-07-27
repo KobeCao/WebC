@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 1.利用对象字面量来创建 computer 对象
+        // let computer = {
+        //     color : '黑色',
+        //     weight :'5kg',
+        //     pinPai :'联想',
+        //     xinHao : '最新',
+        //     movie : function () {
+        //         console.log('可以看电影');
+        //     },
+        //     music : function () {
+        //         console.log('可以听歌');
+        //     },
+        //     game : function () {
+        //         console.log('可以玩游戏');
+        //     }
+        // };
+        // console.log(computer.color);
+        // console.log(computer['weight']);
+        // console.log(computer.pinPai);
+        // console.log(computer.xinHao);
+        // computer.movie();
+        // computer.music();
+        // computer.game();
+
+        // 2.利用 new object 创建对象
+        // let computer = new Object();
+        // computer.color = '红色';
+        // computer.weight = '10kg';
+        // computer.pinPai = '华硕';
+        // computer.xinHao = '最新';
+        // computer.movie = function () {
+        //     console.log('可以看电影');
+        // }
+        // computer.music = function () {
+        //     console.log('可以听歌');
+        // }
+        // computer.game = function () {
+        //     console.log('打游戏');
+        //
+        // }
+        // console.log(computer.color);
+        // console.log(computer['weight']);
+        // console.log(computer.pinPai);
+        // console.log(computer.xinHao);
+        // computer.movie();
+        // computer.music();
+        // computer.game();
+
+        // 3.利用构造函数来创建对象
+         function  computer(color,weight,pinPai,xinHao) {
+              this.color = color;
+              this.weight = weight;
+              this.pinPai = pinPai;
+              this.xinHao = xinHao;
+              this.movie = function (movie) {
+                  console.log(movie);
+              }
+              this.music = function (music) {
+                  console.log(music);
+              }
+              this.game = function (game) {
+                  console.log(game);
+              }
+         }
+         let dn = new computer('白色','15kg','苹果','旗舰版');
+        console.log(dn.color);
+        console.log(dn.weight);
+        console.log(dn.pinPai);
+        console.log(dn.xinHao);
+        dn.movie('看电影');
+        dn.music('可以听歌');
+        dn.game('打游戏');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

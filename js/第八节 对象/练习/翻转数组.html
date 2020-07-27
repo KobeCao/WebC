@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+         function  reverse(arr) {
+             let newArr = [];
+             for (let i = arr.length - 1;i >= 0;i--){
+                 newArr[newArr.length] = arr[i]; // 将数组中的元素从后往前依次放进 newArr
+             }
+             return newArr;
+         }
+         let  arr1 = reverse([1,2,3,4,5,6]);
+         console.log(arr1);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

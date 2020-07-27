@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //  利用构造函数创建两个英雄对象，函数中的公共部分包括：姓名属性，类型，血量属性，攻击方式
+        function king(name,type,blood,) {
+              this.name = name;
+              this.type = type;
+              this.blood = blood;
+              this.attack = function (attack) {
+                  console.log(attack);
+              }
+        }
+        let lianpo = new king('廉颇','力量型','500血量');
+        console.log(lianpo.name);
+        console.log(lianpo['type']);
+        console.log(lianpo.blood);
+        lianpo.attack('它是近战英雄');
+
+        let houyi = new king('后羿','射手型','100血量');
+        console.log(houyi.name);
+        console.log(houyi.type);
+        console.log(houyi.blood);
+        houyi.attack('它是远程英雄');
+    </script>
+</head>
+<body>
+
+</body>
+</html>
