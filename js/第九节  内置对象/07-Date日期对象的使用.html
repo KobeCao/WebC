@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //  Date() 日期对象  是一个构造函数  必须使用new 来调用创建我们的日期对象(必须实例化才能使用 )
+
+        // 1.   使用Date  如果没有参数，返回当前系统的当前时间
+        let date = new Date();  //  实例化
+        console.log(date);
+
+        // 2. 参数常用的写法  数字型==2020，7,17  或者是字符串型的  '2020-7-16 8:51:59'
+        let date1 = new Date(2020,7,17);
+        console.log(date1); // 返回的是2020,6,17
+        let data2 = new Date('2020-7-17 20:56:40');
+        console.log(data2);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

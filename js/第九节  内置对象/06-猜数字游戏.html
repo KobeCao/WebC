@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 1. 随机生成一个1-10之间的整数
+        // function getRandom(min,max) {
+        //     return Math.floor(Math.random() * (max - min + 1)) + min;
+        // }
+        // let random = getRandom(1,10);
+        // while (true){  // 死循环
+        //     let num = prompt('你来猜？ 输入一个 1-10 之间的数字:');
+        //     if(num  > random){
+        //         alert('您猜大了');
+        //     }else  if(num < random){
+        //         alert('您猜小了');
+        //     }else {
+        //         alert('您猜对了');
+        //         break; // 退出循环 结束程序
+        //     }
+        // }
+
+        // 要求用户猜 0-50之间的一个数字数，但是只有10次机会
+        // 1. 随机生成一个1-50之间的整数
+        function getRandom(min,max){
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        var random = getRandom(1,50)
+        for(var i = 1; i <= 10; i++){
+            var num = prompt('请您输入1-50之间的任意整数：')
+            if(num > random){
+                alert('数字大了，继续猜')
+            }else if(num < random){
+                alert('数字小了，继续猜')
+            }else{
+                alert('猜对了')
+                break;
+            }
+            if(i == 10){
+                alert('您的次数已经用完')
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

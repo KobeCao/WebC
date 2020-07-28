@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //  判断一个字符串"abcoefoxyozzopp"中出现次数最多的位置  并统计它的次数
+        //  核心算法：利用 charAt() 遍历这个字符串
+        //  把每个字符都存储到对象，如果对象没有该属性，就为1，如果存在就 +1
+        //  遍历对象，得到最大值和该字符
+         let str = "abcoefoxyozzopp";
+         var o = {}; // 创建一个对象
+         for (let i = 0; i < str.length;i++){
+              let chars = str.charAt(i); // 将遍历的值存进chars 并且 chars 是字符串的每一个字符
+              if(o[chars]){ //  o[chars] 得到的是属性值
+                  o[chars]++;
+              }else{
+                  o[chars] = 1;
+              }
+         }
+        console.log(o);
+        // 遍历对象
+        let max = 0; // 求o里面的最大值
+        let ch = ''; // 谁出现的次数最多
+        for (let k in o){ // k 得到的是属性名 o[k]得到的是属性值
+            if (o[k] > max ){
+                max = o[k];
+                ch = k;
+            }
+        }
+        console.log(max);
+        console.log('最多的字符是' + ch );
+    </script>
+</head>
+<body>
+
+</body>
+</html>

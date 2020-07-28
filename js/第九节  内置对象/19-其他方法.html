@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 1.concat() 连接两个或多个数组 不影响原数组
+        //  返回新的数组
+        // let str1 = "Hello ";
+        // let str2 = "world!";
+        // let n = str1.concat(str2);
+        // console.log(n); // Hello world!
+        // let str1="Hello ";
+        // let str2="world!";
+        // let str3=" Have a nice day!";
+        // let n = str1.concat(str2,str3);
+        // console.log(n); // Hello world! Have a nice day!let
+
+        // 2.slice(start,end) 可提取字符串的某个部分，并以新的字符串返回被提取的部分。
+
+        // 使用 start（包含） 和 end（不包含） 参数来指定字符串提取的部分。
+        // 如果是负数，则该参数规定的是从字符串的尾部开始算起的位置。也就是说，-1 指字符串的最后一个字符，-2 指倒数第二个字符，以此类推。
+
+        let str = "Hello world!";
+        let n1 =str.slice(3);
+        console.log(n1); // lo world!
+
+        let str1 ="Hello world!";
+        let n2 =str1.slice(-1);
+        console.log(n2); //!
+
+        // 3. splice() 方法用于添加或删除数组中的元素。
+        // 这种方法会改变原始数组。
+
+        // 从第三个位置开始删除数组后的两个元素：
+        let fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let ddd = fruits.splice(2,2);
+        console.log(ddd); //  ["Apple", "Mango"]
+        console.log(fruits); // ["Banana", "Orange"]
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
