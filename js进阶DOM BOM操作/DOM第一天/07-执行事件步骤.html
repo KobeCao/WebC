@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>123</div>
+<script>
+    // 执行事件的步骤
+    // 1.获取事件源
+    let div = document.querySelector('div');
+    // 2.注册事件（绑定事件）
+    // div.onclick
+    // 3.添加事件处理（采取函数赋值形式）
+    div.onclick = function () {
+        console.log('我被选中了');
+    }
+
+</script>
+</body>
+</html>
