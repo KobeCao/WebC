@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //window.onload是窗口（页面）加载事件
+        // onload 就是等页面内容加载完毕，再去执行函数
+        // 页面加载完毕才去执行里面的代码
+        // window.onload = function(){
+        //     var btn  = document.querySelector('button');
+        //     btn.addEventListener('click',function(){
+        //         alert('点击我');
+        //     })
+        // }
+        // window.onload = function(){
+        //     alert(22);
+        // }
+        //window.onload传统注册事件只能写一次，也就是以上方法只会执行一次，会以最后一个为准
+
+        
+        //如果使用addEventListener()则没有限制
+        window.addEventListener('click',function(){
+            var btn  = document.querySelector('button');
+            btn.addEventListener('click',function(){
+                alert('点击我');
+            })
+        })
+        window.addEventListener('load',function(){
+           alert(22);
+        })
+        
+        
+        // DOMContentLoaded事件触发时，仅当DOM 加载完成，不包括样式，图片。flash 等等
+        document.addEventListener('DOMContentLoaded',function(){
+            alert(33);
+        })
+
+        // load 等页面内容全部加载完毕，包含页面dom元素，图片 flash css 等等
+        // DOMContentLoaded 是DOM 加载完毕，不包含图片 flash css 等就可以执行 加载速度比 load更快一些
+    </script>
+</head>
+<body>
+    <button>点击</button>
+</body>
+</html>

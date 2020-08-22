@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        // 1. 第一个登录页面(login.html)，里面有提交表单，action提交到index.html页面
+        // 2. 第二个页面(index.html)，可以使用第一个页面的参数，这样实现了一个数据不同之间的传递效果
+        // 3. 第二个页面之所以可以使用第一个页面的参数，是利用了URL里面的location.search参数
+        // 4. 在第二个页面中，需要把这个参数提取
+        // 5. 第一步去掉问号？ 利用substr
+        // 6. 第二步 利用=分割键 和 值 split('=')
+
+        console.log(location.search); // 返回 ?name1=表单输入的值
+        // 1. 先去掉？ substr('起始的位置',截取几个字符);
+        var params = location.search.substr(1); // 里面存的值就是表单提交的值 name=表单输入的值
+        console.log(params);
+        // 2. 利用=把字符串分割为数组  split('=');
+        var arr = params.split('=');
+        console.log(arr);
+        var div = document.querySelector('div')
+        // 3. 把数组写入div中
+        div.innerHTML = arr[1] + '欢迎您';
+    </script>
+</body>
+</html>
