@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        // clientTop  返回元素上边框的大小 
+        // clientLeft 返回元素左边框的大小
+        // clientWidth 返回自身包括padding 内容区的宽度，不含边框，返回数组不带单位
+        // clientHeight 返回自身包括padding 内容区的高度，不含边框，返回数组不带单位
+        // client 宽度 和我们offsetWidth
+        var div = document.querySelector('div');
+        console.log(div.clientWidth );
+    </script>
+</body>
+</html>

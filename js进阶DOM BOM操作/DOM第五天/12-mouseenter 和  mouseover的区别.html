@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 300px;
+            height: 300px;
+            background-color: blueviolet;
+            margin: 100px auto;
+        }
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        // father.addEventListener('mouseover',function(){
+        //     console.log(111);
+        // });
+        father.addEventListener('mouseenter',function(){
+            console.log(111);
+        })
+        // mouseover 鼠标经过自身盒子会触发，经过子盒子还会触发。mouseenter 只会经过自身盒子触发,因为mouseenter不会冒泡，同样 mouseleave(鼠标离开) 也不会冒泡
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .sliderBar {
+            position: fixed;
+            right: 0;
+            bottom: 100px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+            color: #fff;
+        }
+        
+        .con {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 40px;
+            background-color: purple;
+            z-index: -1;
+        }
+    </style>
+    <script src="animate.js"></script>
+</head>
+
+<body>
+    <div class="sliderBar">
+        <span>←</span>
+        <div class="con">问题反馈</div>
+    </div>
+
+    <script>
+        // 当我们鼠标经过 sliderBar 就会让 con这个盒子滑动到左侧
+        // 当我们鼠标离开 sliderBar 就会让 con这个盒子滑动到右侧
+        // 1. 获取元素：
+        var sliderBar = document.querySelector('.sliderBar');
+        var con = document.querySelector('.con');
+        sliderBar.addEventListener('mouseenter',function(){  //  当鼠标引入
+            // animate(obj,target,callback); // 引入封装好的函数
+            animate(con,-160,function(){
+                // 当我们动画执行完毕，使用回调函数就把左箭头 ← 改为 右箭头 →
+                sliderBar.children[0].innerHTML = '→';
+            });
+        });
+        sliderBar.addEventListener('mouseleave',function(){ // 当鼠标离开
+            animate(con,0,function(){
+                sliderBar.children[0].innerHTML = ' ←';
+            });
+
+        })
+    </script>
+</body>
+
+</html>

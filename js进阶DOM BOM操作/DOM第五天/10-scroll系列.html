@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            padding: 10px;
+            background-color: pink;
+            border: 5px solid blue;
+            overflow: auto; 
+        }
+    </style>
+</head>
+<body>
+    <div>
+        我是内容  我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容 我是内容
+    </div>
+    <script>
+        // scroll 系列
+        // scrollTop  返回被卷去的上侧距离
+        // scrollLeft 返回被卷去的左侧距离
+        // scrollWidth 返回自身实际的宽度，不含边框，返回数组不带单位
+        // scrollHeight 返回自身实际的高度，不含边框，返回数组不带单位
+        var div = document.querySelector('div');
+        console.log(div.scrollHeight); // 311
+        console.log(div.clientHeight); // 200
+        
+        // scroll滚动事件当我们滚动条发生变化会触发事件
+        div.addEventListener('scroll',function(){
+            console.log(div.scrollTop); //
+        })
+    </script>
+</body>
+</html>
