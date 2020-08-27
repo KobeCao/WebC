@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        $(function(){ 
+            $("div").css("width"); // 参数只写属性名，则是返回属性值
+            // console.log($("div").css("width")); 200px
+
+            // $("div").css("width","300px"); // 设置一组样式
+
+            $("div").css({  // 设置多种样式
+                width: 400,
+                height: 400,
+                backgroundColor: "red"
+                // 如果是复合属性则必须采用驼峰命名法，如果值不是数字，则需要加引号
+            }) 
+        })
+
+    </script>
+</body>
+</html>
