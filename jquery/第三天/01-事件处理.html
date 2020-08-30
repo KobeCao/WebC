@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+       div{
+        width: 100px;
+        height: 100px;
+        background-color:pink;
+       }
+       .current {
+        background-color: purple;
+       }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        $(function(){
+            // 1. 单个事件注册
+            // $("div").click(function() {
+            //     $(this).css("background","red");
+            // });
+            // $("div").mouseenter(function(){
+            //     $(this).css("background","green");
+            // })
+
+            // 2. 事件处理
+            // on()方法在匹配元素上绑定一个或者多个事件处理函数
+            // 语法：Element.on(event,[selector],fn) 
+            // event：一个或者多个用空格符的事件类型，
+            // selector: 元素的子元素选择器
+            // fn: 回调函数 即绑定在元素身上的侦听函数
+            // $("div").on({
+            //     mouseenter: function(){
+            //         $(this).css("background","green");
+            //     },click: function(){
+            //         $(this).css("background","red");
+            //     }
+            // }) 
+
+            // on()第二种写法
+            $("div").on("mouseenter mouseleave",function(){
+                $(this).toggleClass("current");
+            })
+        })
+    </script>
+</body>
+</html>
