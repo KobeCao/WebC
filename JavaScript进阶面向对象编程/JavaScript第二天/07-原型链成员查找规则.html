@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Star(name,age) {
+            this.name = name;
+            this.age = age;
+        }
+        Star.prototype.sing = function() {
+            console.log('我会唱歌');
+        }
+        // Star.prototype.sex = '女';
+        Object.prototype.sex = '男';
+        var ldh = new Star('刘德华',18);
+        // 如果这个实例本身就有这个成员
+        // ldh.sex = '男';
+        // console.log(ldh.sex); // 男
+
+        // console.log(ldh.sex); // 女 如果实例里没有这个成员而在原型对象里面。
+
+        console.log(ldh.sex); // 男 如果实例里面和原型对象里面都没有而在Object原型对象里面。
+        // 如果实例里面 原型对象里面 还有Object原型对象里面都没有的话，返回的是undefined
+    </script>
+</body>
+</html>
