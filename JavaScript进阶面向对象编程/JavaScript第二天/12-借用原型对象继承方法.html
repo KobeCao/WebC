@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 借用父构造函数继承属性
+        // 1. 父构造函数
+        function Father(name,age) {
+            // 父构造函数里面的this指向父构造函数的对象实例
+            this.name = name;
+            this.age = age; 
+        }
+        Father.prototype.money = function() {
+            console.log('我挣了10000');
+        };
+        // 2. 子构造函数
+        function Son(name,age,score) {
+            // 原来子构造函数里面的this指向子构造函数的对象实例
+            Father.call(this,name,age);// 将父构造函数里面的this(指向)修改为子构造函数里面的this。 也可以添加自己的属性
+            this.score = score;
+        }
+        // Son.prototype = Father.prototype; //这样直接赋值会有问题，如果直接修改了子原型对象，父原型对象也会跟着变化
+
+        // 让 Father 这个构造函数实例化一下—— 创建一个实例对象 new Father(); 让我们的子原型对象指向这个实例对象，
+        // 实例对象里面有个属性(原型)__proto__，它会指向 Father的原型对象，就可以拿到money这个方法。而我的子原型对象指向Father实例对象，
+        // 所以Son也可以使用money这个方法,而且不管怎样修改子原型对象里面的方法都不会影响这个父原型对象里面，因为子原型对象指向的是Father实例。
+        // Father实例对象和Father原型对象地址不一样，所以不会有影响，
+
+        Son.prototype = new Father();
+        // 如果利用对象的形式修改了原型对象，利用constructor 指回原来的构造函数
+        Son.prototype.constructor = Son;
+        // 这个是子构造函数专门的方法
+        Son.prototype.exam = function() {
+            console.log('我赔了100');
+        }
+        var son = new Son('刘德华',18,100);
+        console.log(son);
+        console.log(Father.prototype); // 父构造函数里面存在字构造函数exam() 
+    </script>
+</body>
+</html>
