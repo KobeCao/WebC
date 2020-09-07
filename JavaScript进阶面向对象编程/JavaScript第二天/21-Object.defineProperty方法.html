@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Object.defineProperty() 定义新属性或修改原有的属性
+        var obj = {
+            id: 1,
+            pname: '小米',
+            price: 1999
+        }
+        // 1. 以前的对象修改添加方式
+
+        // obj.num = 100; // 新增一个属性
+        // obj.price = 2000; // 修改原来的属性
+        // console.log(obj);
+
+        // 2.object.defineProperty() 定义新属性或修改原有的属性
+        Object.defineProperty(obj,'num',{
+            value: 1000,
+            enumerable: true
+        });
+        console.log(obj);
+
+        Object.defineProperty(obj,'price',{
+            value: 2999 
+        });
+        console.log(obj);
+        
+        Object.defineProperty(obj,'id',{
+            // 不允许修改这个属性值 默认值为false
+            writable: false
+        });
+        obj.id = 2; // 它修改不了id的值，除非将 writable 设置为 true
+        console.log(obj);
+        
+        Object.defineProperty(obj,'address',{
+            value: '中国甘肃天水XXXX单元',
+            // 如果值为false 不允许修改这个属性值 默认也是false
+            writable: false,
+            // numerable: 如果值为false 则不允许遍历。 默认为false.
+            enumerable: false,
+            // configurable 如果为 false，则不允许删除这个属性 默认为 false
+            configurable: false
+        });
+        console.log(obj);
+        console.log(Object.keys(obj));
+        delete obj.address; // 删除对象中的某个属性
+        console.log(obj); // 删除不了,因为给address这个属性configurable属性默认为false  不能删除
+        delete obj.pname; 
+        console.log(obj); // 已经删除。没有设置不允许被删除。
+         
+
+    </script>
+</body>
+</html>

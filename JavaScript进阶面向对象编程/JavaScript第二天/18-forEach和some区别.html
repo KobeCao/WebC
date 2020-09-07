@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = ['red','green','blue','pink'];
+        // 1. forEach 迭代 遍历
+        // arr.forEach(function(value){
+        //     if(value == 'green') {
+        //         console.log('找到该元素');
+        //         return true; // 在 forEach() 里面return 不会终止迭代
+        //     }
+        //     console.log(11);
+        // })
+        arr.some(function(value){
+            if(value == 'green') {
+                console.log('找到该元素');
+                // return true 意思就是找到了该元素
+                return true; // 在 some() 里面return  true 就是终止遍历 迭代效率更高
+            }
+            console.log(11);
+        })
+    </script>
+</body>
+</html>
