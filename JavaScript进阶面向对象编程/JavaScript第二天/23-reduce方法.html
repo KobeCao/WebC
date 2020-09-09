@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。
+        // let  arr = [12,33,66,88,4];
+        // let result = arr.reduce(function(tmp,item,index,){
+        //     return tmp + item;
+        // });
+        // alert(result);
+        // 开始执行时，tmp将arr数组里面的12赋值给它作为初始值，而item作为当前的元素将arr数组里面的33赋值给它，return tmp + item之后，tmp
+        // 的值变成了45，将这一次的计算结果给初始值tmp,而当前元素则是arr数组里面的66,每次算出来的结果都是下一次的tmp,函数继续执行，
+        // 直到arr数组里面的全部都计算完成之后，return变成最终的结果203。
+
+        // 算平均数
+        let  arr = [12,33,66,88,4];
+        let result = arr.reduce(function(tmp,item,index){
+            if(index != arr.length - 1) { // 不是最后一次
+                return tmp + item;
+            }else {                        // 最后一次
+                return (tmp+item)/arr.length;
+            }
+           
+        });
+        alert(result);
+    </script>
+</body>
+</html>
