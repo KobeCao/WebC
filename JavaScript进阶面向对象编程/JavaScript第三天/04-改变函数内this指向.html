@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 改变函数内部this 指向 js提供了三种方法 call() apply() bind()
+
+        // 1. call()
+        var o = {
+            name: 'andy',
+            age:18
+        }
+        function fn(a,b) {
+            console.log(this);
+            console.log(a+b);
+        }
+        fn.call(o,1,2); // call()既可以改变我们的this指向,也可以进行计算
+        // call()
+        // 1. 可以调用函数
+        // 2. 可以改变函数内的this指向
+
+        // call() 主要作用可以实现继承
+        function Father(name,age,sex) {
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        function Son(name,age,sex) {
+            Father.call(this,name,age,sex); // 在调用父构造函数 的同事，再把我父构造函数中的this指向我的子构造函数中的this,
+            //  这样的话我子构造函数里的this就的可以使用我父构造函数里面的this
+        }
+        var son = new Son('刘德华',18,'男');
+        console.log(son);
+    </script>
+
+</body>
+</html>

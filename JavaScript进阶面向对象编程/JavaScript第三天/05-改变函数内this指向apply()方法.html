@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 改变函数内部this 指向 js提供了三种方法 call() apply() bind()
+
+        // 1. apply() 应用 运用的意思
+        var o = {
+            name: 'andy',
+            age:18
+        };
+
+        function fn(arr) {
+            console.log(this);
+            console.log(arr);
+        };
+        fn.apply(o,['pink']); // 参数里面必须是数组形式
+        // 1. 调用函数  2.改变函数内部的this指向
+        // 3. 但是它的参数必须是数组(伪数组)
+        
+        // apply() 的主要应用 例如可以利用apply() 借助于数学内置对象求最大值
+        // Math.max();
+        var arr = [1,66,3,99,4];
+        var max = Math.max.apply(Math,arr);  // 在调用apply()的时候，把里面的this再重新指回我们这个数学内置对象，
+        var min = Math.min.apply(Math,arr);
+        console.log(max); // 最大值
+        console.log(min); // 最小值
+        // null不需要改变它的this指向。
+    </script>
+</body>
+</html>
