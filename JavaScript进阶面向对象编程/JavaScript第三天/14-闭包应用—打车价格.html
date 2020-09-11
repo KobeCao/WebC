@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 闭包应用-计算打车价格
+        // 打车起步价13(3公里内),之后每一公里增加5块钱。用户输入公里就可以计算打车价格
+        // 如果有拥堵情况，总价格多收取10块钱拥堵费
+        var car = (function(){
+            var star = 13; // 起步价  局部变量
+            var total = 0; // 总价    局部变量
+            return {
+                // 正常的总价
+                price: function(n) { // n 就是多少公里  匿名函数function是闭包
+                    if(n <= 3) {
+                        total = star;
+                    }else{
+                        total = star + (n - 3) * 5
+                    }
+                    return total;
+                }, 
+                // 拥堵之后的费用
+                yd: function(flag) {
+                    return flag ? total + 10 : total;
+                }, 
+            }
+        })();
+        car.price(5);
+        console.log(car.price(5));  // 23
+        console.log(car.yd(true));  // 33
+        console.log(car.price(1));  // 13
+        console.log(car.yd(false)); // 13
+        
+        // 运行过程：首先执行立即函数 car，立即函数立马会执行，有一个return会返回过来，我们把return给我们的car,那么car就会得到两个函数，
+        // 想要使用其中的任何一个函数，就直接car.price/yd。price必须有一个参数传进来。才能计算。
+    </script>
+</body>
+</html>
