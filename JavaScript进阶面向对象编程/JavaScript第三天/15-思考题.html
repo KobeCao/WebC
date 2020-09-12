@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 思考题 1： 没有闭包
+
+        // var name = "The Window";
+        // var object = {
+        //     name: "My Object",
+        //     getNameFunc: function() {
+        //         return function() {
+        //             return this.name;
+        //         };
+        //     }
+        // };
+
+        // console.log(object.getNameFunc()())
+        // var f = object.getNameFunc();
+        // // 类似于
+        // var f = function() {
+        //     return this.name; // this指向的是window
+        // }
+        // f();
+        // function() {this}{} 
+        // 思考题 2：
+
+        var name = "The Window";　　
+        var object = {　　　　
+            name: "My Object",
+            getNameFunc: function() { // 变量所在的函数就是一个闭包
+                var that = this; //this 指向的是 object
+                return function() {
+                    return that.name;
+                };
+            }
+        };
+        console.log(object.getNameFunc()())
+        // var f = object.getNameFunc();
+        // var f = function() {
+        //             return that.name;
+        //         };
+        //         f();
+    </script>
+</body>
+
+</html>
