@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var rg = /abc/; 只要包含abc就可以
+        // 字符类：[] 表示有一系列字符可供选择，重要匹配其中一个就可以了
+        var ag = /[abc]/; // 只要包含有a 或者有b 或者有c 都返回为true
+        console.log(ag.test('andy')); // true
+        console.log(ag.test('baby')); // true
+        console.log(ag.test('mum')); // false 没有包含abc其中的任何一个字符。
+
+        var ag1 = /^[abc]$/; // 三选一：只有是a 或者是b 或者是c 这三个字母才返回true
+        console.log(ag1.test('aa')); // false
+        console.log(ag1.test('a')); // true
+        console.log(ag1.test('b')); // true
+        console.log(ag1.test('c')); // true 
+        console.log(ag1.test('abc')); // false
+        console.log('----------------------');
+
+        var aeg1 = /^[a-z]$/; // 26个英文字母任何一个字母返回 true
+        console.log(aeg1.test('a')); //true
+        console.log(aeg1.test('z')); //true
+        console.log(aeg1.test('1')); //false
+        console.log(aeg1.test('A')); //false
+        console.log('----------------------');
+        // 字符组合
+        var aeg2 = /^[a-zA-Z0-9_-]$/; // 26个英文字母(大写和小写都可以)任何一个字母返回 true -表示的是a 到z 的范围
+        console.log(aeg2.test('a')); //true
+        console.log(aeg2.test('B')); //true
+        console.log(aeg2.test('8')); //true
+        console.log(aeg2.test('-')); //true
+        console.log(aeg2.test('_')); //true
+        console.log(aeg2.test('!')); //false
+        console.log('------------------------');
+        // 如果中括号里面有^ 表示取反的意思 千万和 我们边界符 ^ 别混淆
+        var aeg3 = /^[^a-zA-Z0-9_-]$/;
+        console.log(aeg3.test('a')); // false
+        console.log(aeg3.test('B')); // false
+        console.log(aeg3.test('8')); // false
+        console.log(aeg3.test('-')); // false
+        console.log(aeg3.test('_')); // false
+        console.log(aeg3.test('!')); // true
+    </script>
+</body>
+</html>
