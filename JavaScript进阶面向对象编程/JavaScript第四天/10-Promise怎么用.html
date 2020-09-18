@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        let p = new Promise(function (resolve, reject) {
+            // 异步代码
+            // resolve—成功了
+            // reject—失败了
+
+
+            $.ajax({
+                url: 'txt/data.txt',
+                dataType: 'json',
+                success(arr){
+                    resolve(arr);
+
+                },
+                error(err){
+                    reject(err);
+                }
+            })
+
+        });
+        p.then(function(){
+            alert('成功了');
+        },function(){
+            alert('失败了');
+        }); // 里面的第一个函数就是成功的时候Promise会调用它，第二个函数就是失败的时候会调用它。
+    </script>
+</body>
+
+</html>
