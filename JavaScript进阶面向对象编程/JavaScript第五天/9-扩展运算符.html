@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>1</div>
+	<div>4</div>
+	<div>3</div>
+	<div>6</div>
+	<div>2</div>
+	<div>5</div>
+    <script>
+        // 扩展运算符可以将数组或者对象转换为用逗号分隔的参数序列。    
+        // let ary = [1,2,3];
+        // ary;// 1,2,3
+        // console.log(...ary);
+        // console.log(1,2,3); // 1 2 3
+        // let age = ['a','b','c'];
+        // // ...age //'a','b','c'
+        // console.log(...age);
+        // console.log('a','b','c');
+
+        // 扩展运算符可以应用于合并数组
+        // let ary1 = [1, 2, 3]; // 将ary1拆分成 1,2,3
+        // let ary2 = [3, 4, 5];
+        // let ary3 = [...ary1, ...ary2];
+        // console.log(ary3);
+
+        // 方法二
+        // let ary1 = [1, 2, 3]; // 将ary1拆分成 1,2,3
+        // let ary2 = [3, 4, 5];
+        // ary1.push(...ary2);
+        // console.log(ary1);    
+
+        //将类数组或可遍历对象转换为真正的数组
+        let divs = document.getElementsByTagName('div');
+        console.log(divs);
+        const ary = [...divs];
+        console.log(ary);
+        ary.push('a');
+        console.log(ary); // 证明ary确实是一个数组
+    </script>
+</body>
+
+</html>

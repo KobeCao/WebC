@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ...args 代表接收所有的实参
+        // const sum = (...args) => {
+        //    let total = 0;
+        //    args.forEach(item => total += item);//forEach()方法循环数组，它里面接收一个回调函数，里面的形参item,数组当中有多少个值这个回调函数就会被执行多少次。 
+        //     // item就是当前这一次循环的当前项，因为箭头函数只有一个形参，小括号就省略了
+        //    return total;
+        // };
+        // console.log(sum(10,30));
+        // console.log(sum(10,20,30));
+
+        let students = ['wangWu', 'zhangSan', 'liSi'];
+        let [s1, ...s2] = students;
+        console.log(s1); // 'wangWu'
+        console.log(s2); // ['zhangSan','liSi'];
+    </script>
+</body>
+
+</html>

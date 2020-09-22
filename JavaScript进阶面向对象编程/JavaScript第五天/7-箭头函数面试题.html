@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 对象是不能够产生没有作用域
+    //    var obj = {
+    //        age: 20,
+    //        say: () => {
+    //            alert(this.age); // 在调用say()方法时候，this指向的是window，而在window对象下面，没有age这个属性，所以会出现undefined
+    //        }
+    //    }
+    //    obj.say();
+        var sge = 100;
+        var obj = {
+           age: 20,
+           say: () => {
+               alert(this.age); // 在调用say()方法时候，this指向的是window，而在window对象下面，此时有age属性,
+           }
+        }
+        obj.say();
+    
+    </script>
+</body>
+</html>
