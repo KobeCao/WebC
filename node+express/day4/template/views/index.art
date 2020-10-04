@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 在模板的花括号当中，我们可以直接写template()方法中的第二个参数中的属性， -->
+    {{ name }}
+    {{ age }}
+</body>
+</html>
