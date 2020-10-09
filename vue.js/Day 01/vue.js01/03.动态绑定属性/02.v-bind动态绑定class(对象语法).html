@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!-- <h2 class="active">{{message}}</h2>
+        <h2 v-bind:class="active">{{message}}</h2> -->
+        
+        <!-- 对象里面放置键值对 -->
+        <!-- <h2 v-bind:class="{key1: value, key2:value}">{{message}}</h2> -->
+        <!-- 布尔值的意义，当布尔为true的时候，类就会被添加到标签上面，当布尔为false的时候，类就不会被添加到标签上面，这样之后我们就可以通过
+        控制布尔值再来决定这个标签这个元素到底有这个类名还是没有这个类名 -->
+        <!-- <h2 v-bind:class="{类名1: boolean, 类名2: boolean}">{{message}}</h2> -->
+        <h2 v-bind:class="{active: isActive, line: isLine}">{{message}}</h2>
+        <!-- 调用函数getClasses -->
+        <h2 v-bind:class="getClasses()">{{message}}</h2>
+        <button v-on:click="btnClick">点击</button>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好',
+                // 默认情况下是true
+                isActive: true,
+                isLine: true
+            },
+            methods: {
+                btnClick: function() {
+                    this.isActive = !this.isActive  //点击btnClick取反
+                },
+                getClasses: function() {
+                    return {active: this.isActive, line: this.isLine}
+                }
+            }
+        })
+    </script>  
+</body>
+</html>

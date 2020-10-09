@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+  <style>
+    .active {
+      color: red;
+    }
+  </style>
+
+  <!-- 作业需求：点击列表中的哪一项，那么该项的文字变成红色  index 序列号  active:index==mark 如果mark等于index才有active这个属性-->
+  <div id="app">
+    <ul>
+      <li v-for="(item, index) in movies" :class="{active:index==mark}" @click="getColor(index)">{{ index }}-{{ item }}
+      </li>
+    </ul>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        mark: 0,
+        movies: ['复仇者联盟', '钢铁侠', '美国队长', '小黑历险记']
+      },
+      methods: {
+        getColor(index) {
+          this.mark = index;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
