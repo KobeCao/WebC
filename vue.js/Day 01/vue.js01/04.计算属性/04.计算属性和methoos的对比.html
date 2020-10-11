@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!--第一种方案-直接拼接  语法过于繁琐-->
+    <h2>{{firstName}} {{lastName}}</h2>
+    <!--第二种方案-通过定义methods-->
+    <h2>{{getFullName()}}</h2>
+    <!--第三种方案 computed-->
+    <h2>{{FullName}}</h2>
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        firstName: 'Kobe',
+        lastName: 'Bryant'
+      },
+      // 每次调用都会重新计算。性能比较低
+      methods: {
+        getFullName: function () {
+          return this.firstName + ' ' + this.lastName
+        }
+      },
+      // 每次调用如果值没有变化,会把原来的结果给你返回出去，不会重新计算，
+      computed: {
+        FullName: function () {
+          return this.firstName + ' ' + this.lastName
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

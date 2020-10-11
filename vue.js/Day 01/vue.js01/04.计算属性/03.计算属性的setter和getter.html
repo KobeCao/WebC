@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>{{fullName}}</h2>
+  </div>
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        firstName: 'Kobe',
+        lastName: 'Bryant'
+      },
+      // 简写形式
+      // computed: {
+      //     fullName: function() {
+      //         return this.firstName+ ' ' + this.lastName 
+      //     }
+      // }
+
+      // 计算属性一般只需要实现它的getter方法 setter方法一般不需要实现(去设置它)，
+      computed: {
+        fullName: {
+          // 计算属性一般没有set方法，只读属性
+          // set: function(newValue) {  newValue 会接收重新设置的值
+          //     console.log('--------------',newValue);
+          //     // 对newValue进行截取，
+          //     const names = newValue.split(' ');
+          //     this.firstName = names[0]; 当重新设置fullName时调用set方法
+          //     this.lastName = names[1];  重新改变了fullName依赖的值会调用get方法
+          // },
+          get: function () {  // 展示的值
+            return this.firstName + ' ' + this.lastName
+          }
+        },
+
+        //  
+        // fullName: function () {
+        //     return this.firstName + ' ' + this.lastName
+        // }
+      }
+    })
+  </script>
+</body>
+
+</html>
