@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <span v-if="isUser">
+      <label for="username">用户账号</label>
+      <!-- 用户原来输入的东西点击切换按钮时还存在，是因为Vue在进行DOM渲染时，出于性能考虑，会尽可能的复用已经存在的元素，
+        而不是重新创建新的元素 不希望复用 加入key  并且保证key的不同-->
+      <input type="text" id="username" placeholder="用户账号" key="username">
+    </span>
+    <span v-else>
+      <label for="email">用户邮箱</label>
+      <input type="text" id="email" placeholder="用户邮箱" key="email">
+    </span>
+    <button @click="isUser = !isUser">切换类型</button>
+  </div>
+  <script src="../js//vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        isUser: true
+      }
+    })
+  </script>
+</body>
+
+</html>
