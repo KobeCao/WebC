@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- vue实例模板 -->
+  <div id="app">
+    <cpn :number1="num1"
+         :number2="num2" 
+         @num1change="num1change" 
+         @num2change="num2change"></cpn>
+  </div>
+  <!-- 子组件的模板 -->
+  <template id="cpn">
+    <div>
+      <!-- 通过props将我们的父组件里面的东西传递给我们子组件 -->
+      <h2>props:{{number1}}</h2>
+      <h2>data:{{dnumber1}}</h2>
+      <!-- <input type="text" v-model="dnumber1"> -->
+      <input type="text" v-bind:value="dnumber1" @input="num1Input">
+      <h2>props:{{number2}}</h2>
+      <h2>data:{{dnumber2}}</h2>
+      <!-- <input type="text" v-model="dnumber2"> -->
+      <input type="text" v-bind:value="dnumber2" @input="num2Input">
+    </div>
+  </template>
+  <script src="../js//vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        num1: 1,
+        num2: 0
+      },
+      // 实现上面绑定好的num1change和num2change方法
+      methods: {
+        num1change(value) {
+        this.num1 = parseFloat(value);
+        },
+        num2change(value) {
+          this.num2 = parseFloat(value);
+        }
+      },
+      components: {
+        cpn: {
+          template: '#cpn',
+          props: {
+            //当修改绑定好的值时，会报错。使用data()就不会报错
+            number1: Number, // 这里面的数据就是上面的<cpn :number1="num1"></cpn> 里面的num1传过来的数据,
+            number2: Number
+          },
+          data() { // 想要修改值的话放在data()里面，不会出错，
+            return {
+              dnumber1: this.number1,
+              dnumber2: this.number2
+            }
+          },
+          // 想要修改data里面的值。
+          methods: {
+            num1Input(event) {
+              // 1. 将input中的value赋值到dnumber中
+              this.dnumber1 = event.target.value;
+              // 2. 为了让父组件可以修改值。发出事件
+              //在这个值发生改变的同时发出一个事件，发出num1发生改变的事件，并且将dnumber值传出去，
+              this.$emit('num1change',this.dnumber1);
+
+              // 3. 同时也可以修改dnumber的值，让其修改num1的值让num2的值比num1的值大100倍，相反修改num2的值，num1将比num2小 100/1
+              this.dnumber2 = this.dnumber1 * 100;
+              this.$emit('num2change',this.dnumber2);
+            },
+            num2Input() {
+              this.dnumber2 = event.target.value;
+              this.$emit('num2change',this.dnumber2);
+
+              this.dnumber1 = this.dnumber2 / 100;
+              this.$emit('num1change',this.dnumber1);
+            }
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

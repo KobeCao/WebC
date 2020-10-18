@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <child-cpn @increment="changTotal" @decrement="changTotal"></child-cpn>
+    <h2>点击次数: {{total}}</h2>
+  </div>
+  <template id="childCpn">
+    <div>
+      <button @click="increment">+1</button>
+      <button @click="decrement">-1</button>
+    </div>
+  </template>
+  <script src="../js//vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        total: 0
+      },
+      methods: {
+        changTotal(counter) {
+          this.total = counter
+        }
+      },
+      // 子组件 子组件发出事件 在使用child-cpn使用通过@increment 和 @ decrement监听事件
+      components: {
+        'child-cpn': {
+          template: '#childCpn',
+          data() {
+            return {
+              counter: 0
+            }
+          },
+          methods: {
+            increment() {
+              this.counter++;
+              this.$emit('increment', this.counter);
+            },
+            decrement() {
+              this.counter--;
+              this.$emit('decrement', this.counter)
+            }
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
