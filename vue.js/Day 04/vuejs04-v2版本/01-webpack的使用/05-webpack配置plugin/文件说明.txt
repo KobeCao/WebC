@@ -1,0 +1,4 @@
+src文件夹： 源码文件
+dist文件夹：将打包好的文件放在里面  dist->distribution(发布)
+main.js/index.js: 整个程序的执行入口
+webpack.config.js: 配置文件
