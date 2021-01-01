@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      /* 透视写在被观察元素的父盒子上面的 */
+      perspective: 200px;
+    } 
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+      /* transform: translateX(100px);
+      transform: translateY(100px); */
+      /* transform: translateX(100px) translateY(100px) translateZ(100px); */
+      transform: translate3d(400px,100px,100px);
+      /* xyz是不能够省略的，如果没有就写0 */
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

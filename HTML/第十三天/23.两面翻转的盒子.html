@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      /* 透视效果 */
+      perspective: 400px;
+    }
+    .box {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 100px auto;
+      transition: all 1.5s;
+      /* 让背面的紫色盒子保留立体空间  给父级添加的*/
+      transform-style: preserve-3d;
+    }
+    .box:hover {
+      transform: rotateY(180deg);
+    }
+    .front,
+    .back {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      font-size: 30px;
+      color: #fff;
+      text-align: center;
+      line-height: 300px;
+    }
+    .front {
+      background-color: pink;
+      z-index: 1;
+    }
+    .back {
+      background-color: purple;
+      /* 像手机一样 让他们背靠背 旋转 */
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="front"> 满堂花醉三千客 </div>
+    <div class="back"> 一剑霜寒十四州 </div>
+    <!-- Box父盒子里面包含前后两个子盒子，box是翻转的盒子，front是前面的盒子，back是后面的盒子 
+    css样式里面
+     box指定大小，切记要添加3D呈现
+     back盒子要沿着Y轴翻转180deg
+     最后鼠标经过box沿着Y旋转180deg
+    -->
+  </div>
+</body>
+</html>
