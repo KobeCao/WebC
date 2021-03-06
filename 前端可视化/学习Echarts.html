@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script src="js/echarts.min.js"></script>
+  <script>
+    // 初始化实例对象 Echarts.init(dom容器);
+    var myCharts = echarts.init(document.querySelector('.box'));
+    // 指定配置项和数据
+    option = {
+    xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [{
+        data: [120, 200, 150, 80, 70, 110, 130],
+        type: 'bar'
+      }]
+    };
+    // 把配置项给实例对象
+   myCharts.setOption(option);
+  </script>
+</body>
+</html>
